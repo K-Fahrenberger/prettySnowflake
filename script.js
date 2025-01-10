@@ -17,7 +17,7 @@ const createSnowflake = () => ({
 
 function drawSnowflake(snowflake) {
   context.beginPath();
-  context.arc(snowflake.x, snowflake.y, snowflake.radius, 0, 2 * Math.PI); // Full circle
+  context.arc(snowflake.x, snowflake.y, snowflake.radius, 0, 2 * Math.PI);
   context.fillStyle = snowflake.color;
   context.fill();
   context.closePath();
@@ -48,6 +48,9 @@ function animateSnowflakes() {
 
   requestAnimationFrame(animateSnowflakes);
 }
-
+window.addEventListener("resize", () => {
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerHeight;
+});
 initSnowflakes();
 animateSnowflakes();
