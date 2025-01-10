@@ -20,7 +20,7 @@ const createSnowflake = () => ({
   radius: Math.floor(Math.random() * SNOWFLAKE_SIZE_INITIAL) + 2,
   color: SNOWFLAKE_COLOR,
   speed: Math.random() * SNOWFLAKE_SPEED_INITIAL + 1,
-  sway: Math.random() -0.5
+  sway: Math.random(),
 });
 
 function drawSnowflake(snowflake) {
